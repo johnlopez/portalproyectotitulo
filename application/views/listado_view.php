@@ -355,7 +355,7 @@ footer a {
 
           <li><a><?=anchor('login/', 'REGISTRARSE'); ?></a></li>
              <li><a href="#">CONTACTO</a></li>
-<li><a href="#">FAQ</a></li>
+<li><a href="#">FUCK</a></li>
         </ul>
     </nav>
 </header>
