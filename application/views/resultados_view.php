@@ -1,238 +1,106 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title><?= $titulo;?></title>
-<!--The below script Makes IE understand the new html5 tags are there and applies our CSS to it -->
-<!--[if IE]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]
-<link rel="stylesheet" href="style.css" />
---> 
+    <head>
+        <meta charset="utf-8">
+        <title>
+               Universidad Tecnologica Metropolitana
+        </title>
 
+        
+
+    
+    
+
+    <link href="<?php echo base_url()?>public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <link href="<?php echo base_url()?>public/css/UI Lightness/jquery-ui-1.8.6.custom.css" rel="stylesheet" type="text/css" media="all" />
+        
+    <link href="<?php echo base_url()?>public/css/ui.jqgrid.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <link href="<?php echo base_url()?>public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <link href="<?php echo base_url()?>public/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" media="all" />
+            
+    <script type="text/javascript">
+      var webroot = '/foro/index.blade.php';var wroot = '/Laravel/public/';var jsession_data = [];var theme = "UI Lightness";
+    </script>
+
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/jquery-1.4.2.min.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/jquery.Rut.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/jquery.validate.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/Utilitarios.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/jquery.selectboxes.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/jquery-ui-1.8.6.custom.min.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/jquery.ui.datepicker-es.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/jquery.layout.min.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/i18n/grid.locale-sp.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/jquery.jqGrid.min.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/general.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/themeswitchertool.js"></script>
+      
+      <script type="text/javascript" src="<?php echo base_url()?>public/js/layout-default.js"></script>
+      
+
+<!-- ----------------------------------------------------------------- -->
+<!--
+      {{ HTML::script('js/jquery.infinitecarousel3.js') }}
+      {{ HTML::script('js/jquery.infinitecarousel3.min.js') }}  -->
+
+<!--{{ HTML::script('js/jquery.min.js') }} -->
+
+
+<script type="text/javascript">
+
+$(function(){
+  $('#carousel').infiniteCarousel({
+    displayTime: 6000,
+    textholderHeight : .25
+  });
+});
+</script>
 <style type="text/css">
-
 body {
-    background:#fbfdf6;
-    font-family:"Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
-    font-size:90%;
-    color:#968765;
-    margin:20px auto;
-    text-align:center;
-    line-height:1.4em;
-    width:960px;
+  padding-top: 50px;
+}
+#carousel {
+  margin: 0 auto;
+  width: 400px;
+  height: 390px;
+  padding: 0;
+  overflow: scroll;
+  border: 2px solid #999;
+}
+#carousel ul {
+  list-style: none;
+  width: 1500px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#carousel li {
+  display: inline;
+  float: left;
+}
+.textholder {
+  text-align: left;
+  font-size: small;
+  padding: 6px;
+  -moz-border-radius: 6px 6px 0 0;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family:Helvetica, Arial, sans-serif;
-    font-size:1.5em;
-    letter-spacing:-0.06em;
-    text-transform:uppercase;
-    font-weight:normal;
-
-}
-
-a:link, a:visited {
-    font-family:georgia, times, serif;
-    font-weight:bold;
-    color:#4169e1; 
-    text-decoration:none;
-    border-bottom:1px solid #91476c;
-    font-size:.8em;
-}
-
-a:hover {
-    border-bottom:1px dotted #91476c;
-}
-
-a img {
-    border:none;
-}
-
-header, section, article, footer {
-    padding:10px 20px 20px;
-    margin:10px;
-    border:1px solid #e7e2d7;
-    border-radius:8px;
-    -webkit-border-radius:.8em;
-    -moz-border-radius:.8em;
-    background:#fff url(sprites.png) repeat-x 0px -120px;
-}
-
-header {
-    display:block;
-    position:relative;
-    text-align:left;
-}
-
-header img {
-    position:absolute;
-    left:20px;
-    top:18px;
-}
-
-header h1 {
-    font-size:2.3em;
-    text-transform:none;
-    letter-spacing:0em;
-    text-align:center;
-}
-
-header h2 {
-    margin:-10px 0px 20px;
-    font-size:1.3em;
-    text-align:center
-}
-
-nav {
-    text-align:center;
-    display:block;
-}
-
-nav ul {
-    padding:0px;
-    list-style-type:none;
-    display:inline;
-}
-
-nav li {
-    margin:0px 10px;
-    padding:0px;
-    list-style-type:none;
-    display:inline;
-}
-
-nav a:link, nav a:visited {
-    font-size:1.4em;
-    font-weight:normal;
-}
-
-section#left {
-    float:left;
-    width:178px;
-    text-align:left;
-}
-
-section#right {
-    float:right;
-    width:178px;
-    text-align:left;
-}
-
-section h1, section h2, section h3, section h4, section h5, section h6 {
-    background:transparent url(sprites.png) no-repeat 0px -80px;
-    color:#000000;
-    padding:9px 10px 10px 10px;
-    margin:13px -10px;  
-    text-shadow:0 1px 0 #403232;
-}
-
-section ul {
-    padding:0px;
-    list-style:none;
-    border-top:1px solid #e7e2d7;
-    margin:14px 0px;
-}
-
-section li {
-    margin:0px;
-    padding:0px;
-    list-style:none;
-}
-
-section li a:link, section li a:visited {
-    float:left;
-    width:96%;
-    padding:3px 1%;
-    border-bottom:1px solid #e7e2d7;
-}
-
-section li a:hover {
-    background:#f2f1ec;
-}
-
-article {
-    float:left;
-    width:418px;
-    text-align:left;
-}
-
-article h1 {
-    background:transparent url(sprites.png) no-repeat 0px 0px;
-    color:#000000;
-    padding:7px 10px 12px 30px;
-    margin-left:-30px;
-    text-shadow:0 1px 0 #403232;
-}
-
-article h2, article h3, article h4, article h5, article h6  {
-    background:transparent url(sprites.png) no-repeat 0px -40px;
-    color:#000000;
-    padding:7px 10px 12px 30px;
-    margin-left:-30px;
-    text-shadow:0 1px 0 #913951;
-}
-
-article p:first-of-type {
-    font-family:Helvetica, Arial, serif;
-    text-transform:uppercase;
-    border-top:1px dotted #968765;
-    border-bottom:1px dotted #968765;
-    padding:10px 0px;
-    color:#c17086;
-}
-
-label {
-    display:block;
-    font-weight:bold;
-}
-
-input, textarea {
-    font-family:"Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
-    font-size:90%;
-    color:#968765;
-    border:1px solid #e7e2d7;
-    border-radius:3px;
-    -webkit-border-radius:.3em;
-    -moz-border-radius:.3em;
-    padding:2px 4px;
-    width:168px;
-    background:#fff url(sprites.png) repeat-x 0px -120px;
-}
-
-input:focus, textarea:focus {
-    border:1px solid #c9c1af;
-}
-
-button {
-    float:right;
-    font-family:Georgia, times, serif;
-    font-size:1.2em;
-    color:#fff;
-    font-style:italic;
-    border:1px solid #c17086;
-    border-radius:3px;
-    -webkit-border-radius:.3em;
-    -moz-border-radius:.3em;
-    padding:3px 12px;
-    background:#bd1341 url(sprites.png) repeat-x -250px -82px;
-    cursor:pointer;
-}
-
-button:hover {
-    background-position:-350px -82px
-}
-
-footer {
-    display:block;
-    clear:both !important;
-    width:898px;
-}
-
-footer a {
-    margin:0px 5px;
-}
 
 
 /////////////////////// TABLA CSS //////////////////////////////////////
@@ -331,51 +199,100 @@ footer a {
 .CSSTableGenerator tr:first-child td:last-child{
     border-width:0px 0px 1px 1px;
 }
-
 </style>
+<!-------------------------------------------------------------------- -->
 
 
 
-</head>
-
+</head>    
 <body>
-
-<header>
-    <hgroup>
-        <h1>Portal Tesis Utem 8=D</h1>
-        <h2>Bienvenidos</h2>
-    </hgroup>
-    <nav>
+    <header class="ui-layout-north">
+        <h1>
+            <img alt="logo" src="<?php echo base_url()?>public/img/utem_estado_de_chile.png">
+        </h1>
+        <div id="top-menu">
+            <?=anchor('vista/', 'Inicio'); ?>
+            <?=anchor('listado/', 'Proyectos de Titulo'); ?>
+            <?=anchor('login/', 'Registrarse'); ?>
+        </div>
+    </header>
+    <!--Menu de la izquierda-->
+    <div id="left-menu" class="ui-layout-west">
+        <div id="accordion">
+            <!--Seccion control de bienes-->
+            <div>
+                <h3><a href="#" rel="3" >Acerca de la UTEM</a></h3>
+                <div class="submenu">
+                    <ul>
+                      <li>hola</li>
+                      <li>hola</li>
+                      <li>hola</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h3><a href="#" rel="4" >Buscar Titulo</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_titulo')?>
+                        <input type="text" name="buscar_titulo" id="buscar_titulo" />
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h3><a href="#" rel="4" >Buscar Autor</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_autor')?>
+                        <input type="text" name="buscar_autor" id="buscar_autor" />
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_fecha')?>
+                        <input type="text" name="buscar_fecha" id="buscar_fecha" />
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h3><a href="#" rel="4" >Buscar Descripcion</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_descripcion')?>
+                        <input type="text" name="buscar_descripcion" id="buscar_descripcion" />
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h3><a href="#" rel="4" >Buscar Resumen</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_resumen')?>
+                        <input type="text" name="buscar_resumen" id="buscar_resumen" />
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>     
+            </br>
+        </div>      
+    </div>
+    </br>
+    <div id="carousel" class="ui-layout-center">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Tab 1</a></li>
-            <li><a href="#">Tab 2</a></li>
-            <li><a><?=anchor('login/', 'Registrarse'); ?></a></li>
-        </ul>
-    </nav>
-    
-    
-    <a href="#" title="Ampersand Solutions homepage"><img src="logo.gif" alt="Ampersand Solutions" /></a>
-    
-</header>
 
-<section id="left">
-    <h1>Menu Principal</h1>
-    <ul>
-        <li><a href="#">opcion 1 </a></li>
-        <li><a href="#">opcion 2 </a></li>
-        <li><a href="#">opcion 3 </a></li>
-        <li><a href="#">opcion 4 </a></li>
-        <li><a href="#">opcion 5 </a></li>
-        <li><a href="#">opcion 6 </a></li>
-        <li><a href="#">opcion 7 </a></li>
-        <li><a href="#">opcion 8 </a></li>
-    </ul>
-</section>
-
-<article>
-    <h1>Buscador</h1>
-    <p> 
+     <p> 
 <div class="container_12">
     
 
@@ -474,59 +391,16 @@ footer a {
     </p> 
 
 
-    
-    <h2>.</h2>
-    <p>
 
-        <div >
-        <?php
-        /*
-            if($files){
-            echo heading('Archivo(s) disponible(s) para descargar', 3);
 
-                foreach($files as $file){         
-                    echo anchor('admin/downloads/'.$file, $file).br(1);            
-                }
-            }
-            else{
-                echo heading('No hay archivos para descargar ', 3).anchor('admin', 'Subir un Archivo');
-            }
-        */
-        ?>
-        </div>
+        </ul>                     
+    </div>
+    <!----------------------------------------------------> 
 
-    </p>
-    <p>---------------------------------</p>
-    <h3>.</h3>
-    <p>---------------------------------
-    </p>
-</article>
-
-<section id="right">
-    <h1>Contact</h1>
-    
-    <form action="#">
-        <p>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="What should we call you?" />
-        </p>
-        <p>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Where should we reply?" />
-        </p>
-        <p>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" cols="10" rows="5"></textarea>
-        </p>
-        <button type="submit">Send</button>
-    </form>
-</section>
-
-<footer>
-    <p>&copy; 2010 Ampersand Solutions - <a href="#">Sitemap</a> | <a href="#">Privacy policy</a> almost <a href="http://validator.w3.org/check?uri=http://www.webdezign.co.uk/blog/html5-examples/3col/">valid HTML5</a> and <a href="http://jigsaw.w3.org/css-validator/validator?uri=www.webdezign.co.uk/blog/html5-examples/3col/">valid <abbr title="Cascading Style Sheet">CSS</abbr>3</a> design by <a href="http://www.webdezign.co.uk" title="web design london">Webdezign</a></p>
-</footer>
-
+<footer class="ui-layout-south"></footer>
 </body>
+
 </html>
+
 
 
