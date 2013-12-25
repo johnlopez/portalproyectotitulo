@@ -86,6 +86,6 @@ class Login extends CI_Controller
 	public function logout_ci()
 	{
 		$this->session->sess_destroy();
-		$this->index();
+		redirect(base_url().'listado');
 	}
 }
