@@ -154,7 +154,7 @@ section li a:hover {
 
 article {
     float:left;
-    width:655px;
+    width:418px;
     text-align:left;
 }
 
@@ -342,46 +342,43 @@ footer a {
 
 <header>
     <hgroup>
-        <h1><img alt="logo" src="<?php echo base_url()?>public/images/utemcito.png"></h1>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-  </hgroup>
+        <h1>Portal Tesis Utem 8=D</h1>
+        <h2>Bienvenidos</h2>
+    </hgroup>
     <nav>
         <ul>
-            <li><a href="#">INICIO</a></li>
-            <li><a href="#">BUSQUEDA</a></li>
-
-          <li><a><?=anchor('login/', 'REGISTRARSE'); ?></a></li>
-             <li><a href="#">CONTACTO</a></li>
-<li><a href="#">FUCK</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tab 1</a></li>
+            <li><a href="#">Tab 2</a></li>
+            <li><a><?=anchor('login/', 'Registrarse'); ?></a></li>
         </ul>
     </nav>
+    
+    
+    <a href="#" title="Ampersand Solutions homepage"><img src="logo.gif" alt="Ampersand Solutions" /></a>
+    
 </header>
 
 <section id="left">
     <h1>Menu Principal</h1>
-  <p>Busqueda por titulo</p>
-    <p><span class="container_12">
-      <input type="text" name="buscar_titulo2" id="buscar_titulo2" />
-    </span><span class="container_12">
-    <input type="submit" value="Buscar" />
-    </span></p>
-    <p align="center">BUSCADOR POR AUTOR</p>
-    <p><span class="container_12">
-      <input type="text" name="buscar_autor2" id="buscar_autor2" />
-      <input type="submit" value="Buscar" />
-    </span></p>
     <ul>
-      <li></li>
-        <li></li>
-  </ul>
+        <li><a href="#">opcion 1 </a></li>
+        <li><a href="#">opcion 2 </a></li>
+        <li><a href="#">opcion 3 </a></li>
+        <li><a href="#">opcion 4 </a></li>
+        <li><a href="#">opcion 5 </a></li>
+        <li><a href="#">opcion 6 </a></li>
+        <li><a href="#">opcion 7 </a></li>
+        <li><a href="#">opcion 8 </a></li>
+    </ul>
 </section>
 
 <article>
     <h1>Buscador</h1>
-  <div class="container_12"><span><?php echo validation_errors(); ?></span>
+    <p> 
+<div class="container_12">
+    
+<span><?php echo validation_errors(); ?></span>        
 <h1>BUSCADOR POR TITULO</h1>
 <?=form_open(base_url().'resultados/validar_titulo')?>
 <input type="text" name="buscar_titulo" id="buscar_titulo" />
@@ -499,11 +496,53 @@ footer a {
     
     <h2>.</h2>
     <p>
+
+        <div >
+        <?php
+        /*
+            if($files){
+            echo heading('Archivo(s) disponible(s) para descargar', 3);
+
+                foreach($files as $file){         
+                    echo anchor('admin/downloads/'.$file, $file).br(1);            
+                }
+            }
+            else{
+                echo heading('No hay archivos para descargar ', 3).anchor('admin', 'Subir un Archivo');
+            }
+        */
+        ?>
+        </div>
+
+    </p>
+    <p>---------------------------------</p>
+    <h3>.</h3>
+    <p>---------------------------------
+    </p>
 </article>
 
+<section id="right">
+    <h1>Contact</h1>
+    
+    <form action="#">
+        <p>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="What should we call you?" />
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Where should we reply?" />
+        </p>
+        <p>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" cols="10" rows="5"></textarea>
+        </p>
+        <button type="submit">Send</button>
+    </form>
+</section>
 
 <footer>
-  <p>&copy; 2013 Camilo Martinez &amp; John Lopez development and design web</p>
+    <p>&copy; 2010 Ampersand Solutions - <a href="#">Sitemap</a> | <a href="#">Privacy policy</a> almost <a href="http://validator.w3.org/check?uri=http://www.webdezign.co.uk/blog/html5-examples/3col/">valid HTML5</a> and <a href="http://jigsaw.w3.org/css-validator/validator?uri=www.webdezign.co.uk/blog/html5-examples/3col/">valid <abbr title="Cascading Style Sheet">CSS</abbr>3</a> design by <a href="http://www.webdezign.co.uk" title="web design london">Webdezign</a></p>
 </footer>
 
 </body>
