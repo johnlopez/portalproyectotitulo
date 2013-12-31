@@ -35,7 +35,7 @@ class Admin extends CI_Controller {
 		{
 			//++++++VALIDACIONES++++++++++++++//
 			$this->form_validation->set_rules('titulo','titulo','trim|required|xss_clean|max_lenght[50]|min_length[2]');
-	        $this->form_validation->set_rules('autor','autor','trim|required|xss_clean|max_lenght[50]|min_length[2]');
+	        $this->form_validation->set_rules('autor','autor','trim|required|xss_clean|max_lenght[50]|min_length[2]|alpha');
 	        $this->form_validation->set_rules('descripcion','descripcion','trim|required|xss_clean|max_lenght[250]|min_length[2]');
 	        $this->form_validation->set_rules('resumen','resumen','trim|required|xss_clean');
 
@@ -46,16 +46,18 @@ class Admin extends CI_Controller {
 	        $this->form_validation->set_message('min_length', 'Campo %s debe tener al menos %s car&aacute;cteres');
 	        //comprobamos que se cumpla el máximo de caracteres introducidos
 	        $this->form_validation->set_message('max_length', 'Campo %s debe tener menos %s car&aacute;cteres');
+
+	        $this->form_validation->set_message('alpha', 'Campo %s debe tener solo letras');
 	        //++++++VALIDACIONES++++++++++++++//
 
 			$config['upload_path'] = $this->folder;
-			$config['allowed_types'] = 'zip|rar|pdf|docx|txt';
+			$config['allowed_types'] = 'pdf';
 			$config['remove_spaces']=TRUE;
-			$config['max_size']	= '2048';
+			$config['max_size']	= '0';
 
 			$this->load->library('upload', $config);
 
-			if ( ! $this->upload->do_upload())
+			if ( ! $this->upload->do_upload() || $this->form_validation->run() == FALSE)
 			{
 				$error = array('error' => $this->upload->display_errors());
 	            $this->load->view('admin_view', $error);
