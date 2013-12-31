@@ -14,6 +14,11 @@ class Resultados extends CI_Controller {
     }
 
     public function validar_titulo() {
+        $this->session->unset_userdata('buscar_autor');
+        $this->session->unset_userdata('buscar_fecha');
+        $this->session->unset_userdata('buscar_descripcion');
+        $this->session->unset_userdata('buscar_resumen');
+
         $this->form_validation->set_rules('buscar_titulo', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
         $this->form_validation->set_message('min_length', 'El %s debe tener al menos %s carácteres');
@@ -29,6 +34,11 @@ class Resultados extends CI_Controller {
         }
     }
     public function validar_autor() {
+        $this->session->unset_userdata('buscar_titulo');
+        $this->session->unset_userdata('buscar_fecha');
+        $this->session->unset_userdata('buscar_descripcion');
+        $this->session->unset_userdata('buscar_resumen');
+
         $this->form_validation->set_rules('buscar_autor', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
         $this->form_validation->set_message('min_length', 'El %s debe tener al menos %s carácteres');
@@ -45,6 +55,11 @@ class Resultados extends CI_Controller {
     }
     
        public function validar_fecha() {
+        $this->session->unset_userdata('buscar_autor');
+        $this->session->unset_userdata('buscar_titulo');
+        $this->session->unset_userdata('buscar_descripcion');
+        $this->session->unset_userdata('buscar_resumen');
+
         $this->form_validation->set_rules('buscar_fecha', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
         $this->form_validation->set_message('min_length', 'El %s debe tener al menos %s carácteres');
@@ -61,6 +76,11 @@ class Resultados extends CI_Controller {
     }
 
         public function validar_descripcion() {
+        $this->session->unset_userdata('buscar_autor');
+        $this->session->unset_userdata('buscar_fecha');
+        $this->session->unset_userdata('buscar_titulo');
+        $this->session->unset_userdata('buscar_resumen');    
+
         $this->form_validation->set_rules('buscar_descripcion', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
         $this->form_validation->set_message('min_length', 'El %s debe tener al menos %s carácteres');
@@ -77,6 +97,11 @@ class Resultados extends CI_Controller {
     }
 
     public function validar_resumen() {
+        $this->session->unset_userdata('buscar_autor');
+        $this->session->unset_userdata('buscar_fecha');
+        $this->session->unset_userdata('buscar_descripcion');
+        $this->session->unset_userdata('buscar_titulo');
+        
         $this->form_validation->set_rules('buscar_resumen', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
         $this->form_validation->set_message('min_length', 'El %s debe tener al menos %s carácteres');
