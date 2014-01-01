@@ -274,6 +274,52 @@ body {
                 </div>
             </div>
             <div>
+                <h3><a href="#" rel="4" >Buscar Carrera</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_carrera')?>
+                        <?php $options = array(
+                                  ''  => 'Seleccionar Carrera',
+                                  'Ingieneria en Informatica'    => 'Ingieneria en Informatica',
+                                  'Arquitectura'    => 'Arquitectura',
+                                  'Bachillerato en Ciencias de la Ingeniería'    => 'Bachillerato en Ciencias de la Ingeniería',
+                                  'Bibliotecología y Documentación'    => 'Bibliotecología y Documentación',
+                                  'Cartografía y Geomática'    => 'Cartografía y Geomática',
+                                  'Contador Público y Auditor'    => 'Contador Público y Auditor',
+                                  'Dibujante Proyectista'    => 'Dibujante Proyectista',
+                                  'Diseño en Comunicación Visual'    => 'Diseño en Comunicación Visual',
+                                  'Diseño Industrial'    => 'Diseño Industrial',
+                                  'Ingeniería Civil en Computación mención Informática'    => 'Ingeniería Civil en Computación mención Informática',
+                                  'Ingeniería Civil Industrial'    => 'Ingeniería Civil Industrial',
+                                  'Ingeniería Comercial'    => 'Ingeniería Comercial',
+                                  'Ingeniería en Administración Agroindustrial'    => 'Ingeniería en Administración Agroindustrial',
+                                  'Ingeniería en Comercio Internacional'    => 'Ingeniería en Comercio Internacional',
+                                  'Ingeniería en Construcción'    => 'Ingeniería en Construcción',
+                                  'Ingeniería Civil Electrónica'    => 'Ingeniería Civil Electrónica',
+                                  'Ingeniería en Geomensura'    => 'Ingeniería en Geomensura',
+                                  'Ingeniería en Gestión Turística'    => 'Ingeniería en Gestión Turística',
+                                  'Ingeniería en Industria Alimentaria'    => 'Ingeniería en Industria Alimentaria',
+                                  'Ingeniería en Mecánica'    => 'Ingeniería en Mecánica',
+                                  'Ingeniería Civil en Prevención de Riesgos y Medioambiente'    => 'Ingeniería Civil en Prevención de Riesgos y Medioambiente',
+                                  'Ingeniería Química'    => 'Ingeniería Química',
+                                  'Ingeniería en Transporte y Tránsito'    => 'Ingeniería en Transporte y Tránsito',
+                                  'Ingeniería Industrial'    => 'Ingeniería Industrial',
+                                  'Química Industrial'    => 'Química Industrial',
+                                  'Trabajo Social'    => 'Trabajo Social',
+                                  'Ingeniería en Biotecnología'    => 'Ingeniería en Biotecnología',
+                                  'Ingeniería Civil en Obras Civiles'    => 'Ingeniería Civil en Obras Civiles'
+
+                                ); ?>
+
+                        <br /><?php echo form_dropdown('buscar_carrera', $options, set_value('buscar_carrera'))?>
+
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
@@ -314,31 +360,40 @@ body {
         <ul>
 
      <p> 
+
+        <h4>Agregar Usuario</h4>
+
       <form method="POST">
-    Username:<input type="text" name="username" value="<?= set_value('username');?>" /><br />
-    Password:<input type="password" name="password" value="<?= set_value('password');?>" /><br />
-    
+    <h5>Usuario:</h5>
+    <input type="text" name="username" value="<?= set_value('username');?>" /><br />
+    <h5>Contraseña:</h5>
+    <input type="password" name="password" value="<?= set_value('password');?>" /><br />
+    <h5>Confirmar Contraseña:</h5>
+    <input type="password" name="pass"/><br />
     <input type="hidden" name="post" value="1" />
     <input type="submit" value="Agregar" />
 </form>
 <hr />
 <?= validation_errors(); ?>
-<h1>Listado De Usuarios</h1>
+<h4>Listado De Usuarios</h4>
 <table>
     <tr>
-        <th>ID</th>   
-        <th>Username</th> 
-        <th>Password</th> 
+          
+        <th>Usuario</th> 
+        
          
-        <th>Accion</th> 
+        <th>Acción</th> 
     </tr>
     <?php foreach($usuarios as $usuario):?>
     <tr>
-        <td><?= $usuario->id?></td>   
-        <td><?= $usuario->username?></td> 
-        <td><?= $usuario->password?></td> 
-        
-        <td><a href="<?= base_url().'admin/editar/'.$usuario->id?>">Editar</a> | <a href="<?= base_url().'admin/eliminar/'.$usuario->id?>">Eliminar</a></td>
+        <?php 
+        if ($usuario->username!='admin') {
+        ?>
+            <td><?= $usuario->username?></td>
+            <td><a href="<?= base_url().'admin/editar/'.$usuario->id?>">Editar</a> | <a href="<?= base_url().'admin/eliminar/'.$usuario->id?>">Eliminar</a></td> 
+        <?php
+        }
+        ?>        
     </tr>
     <?php endforeach;?>
 </table>

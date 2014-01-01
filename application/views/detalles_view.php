@@ -253,6 +253,51 @@ body {
                 </div>
             </div>
             <div>
+                <h3><a href="#" rel="4" >Buscar Carrera</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_carrera')?>
+                        <?php $options = array(
+                                  ''  => 'Seleccionar Carrera',
+                                  'Ingieneria en Informatica'    => 'Ingieneria en Informatica',
+                                  'Arquitectura'    => 'Arquitectura',
+                                  'Bachillerato en Ciencias de la Ingeniería'    => 'Bachillerato en Ciencias de la Ingeniería',
+                                  'Bibliotecología y Documentación'    => 'Bibliotecología y Documentación',
+                                  'Cartografía y Geomática'    => 'Cartografía y Geomática',
+                                  'Contador Público y Auditor'    => 'Contador Público y Auditor',
+                                  'Dibujante Proyectista'    => 'Dibujante Proyectista',
+                                  'Diseño en Comunicación Visual'    => 'Diseño en Comunicación Visual',
+                                  'Diseño Industrial'    => 'Diseño Industrial',
+                                  'Ingeniería Civil en Computación mención Informática'    => 'Ingeniería Civil en Computación mención Informática',
+                                  'Ingeniería Civil Industrial'    => 'Ingeniería Civil Industrial',
+                                  'Ingeniería Comercial'    => 'Ingeniería Comercial',
+                                  'Ingeniería en Administración Agroindustrial'    => 'Ingeniería en Administración Agroindustrial',
+                                  'Ingeniería en Comercio Internacional'    => 'Ingeniería en Comercio Internacional',
+                                  'Ingeniería en Construcción'    => 'Ingeniería en Construcción',
+                                  'Ingeniería Civil Electrónica'    => 'Ingeniería Civil Electrónica',
+                                  'Ingeniería en Geomensura'    => 'Ingeniería en Geomensura',
+                                  'Ingeniería en Gestión Turística'    => 'Ingeniería en Gestión Turística',
+                                  'Ingeniería en Industria Alimentaria'    => 'Ingeniería en Industria Alimentaria',
+                                  'Ingeniería en Mecánica'    => 'Ingeniería en Mecánica',
+                                  'Ingeniería Civil en Prevención de Riesgos y Medioambiente'    => 'Ingeniería Civil en Prevención de Riesgos y Medioambiente',
+                                  'Ingeniería Química'    => 'Ingeniería Química',
+                                  'Ingeniería en Transporte y Tránsito'    => 'Ingeniería en Transporte y Tránsito',
+                                  'Ingeniería Industrial'    => 'Ingeniería Industrial',
+                                  'Química Industrial'    => 'Química Industrial',
+                                  'Trabajo Social'    => 'Trabajo Social',
+                                  'Ingeniería en Biotecnología'    => 'Ingeniería en Biotecnología',
+                                  'Ingeniería Civil en Obras Civiles'    => 'Ingeniería Civil en Obras Civiles'
+
+                                ); ?>
+
+                        <br /><?php echo form_dropdown('buscar_carrera', $options, set_value('buscar_carrera'))?>
+
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>
+            <div>
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
@@ -307,6 +352,7 @@ $v3 = $_POST['variable3'];
 $v4 = $_POST['variable4'];
 $v5 = $_POST['variable5'];
 $v6 = $_POST['variable6'];
+$v7 = $_POST['variable7'];
     
 
 ?>
@@ -331,7 +377,7 @@ $v6 = $_POST['variable6'];
 
             <div class="grid_12" id="head_resultados">
                 <tr>
-                <td><div class="grid_1">Tesis</div></td>
+                <td><div class="grid_1">Proyecto de Titulo</div></td>
                 
                 </tr>
             </div>
@@ -353,6 +399,9 @@ $v6 = $_POST['variable6'];
                     <tr><td><div class="grid_1">Autor</div></td></tr>
                     <tr><td><div class="row_2"><?php echo $v2 ?></div></td></tr>
                     
+                    <tr><td><div class="grid_1">Carrera</div></td></tr>
+                    <tr><td><div class="row_2"><?php echo $v7 ?></div></td></tr>
+
                     <tr><td><div class="grid_1">Fecha</div></td></tr>
                     <tr><td><div class="grid_3"><?php echo $v3 ?></div></td></tr>
                     

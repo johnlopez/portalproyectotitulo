@@ -274,6 +274,52 @@ body {
                 </div>
             </div>
             <div>
+                <h3><a href="#" rel="4" >Buscar Carrera</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_carrera')?>
+                        <?php $options = array(
+                                  ''  => 'Seleccionar Carrera',
+                                  'Ingieneria en Informatica'    => 'Ingieneria en Informatica',
+                                  'Arquitectura'    => 'Arquitectura',
+                                  'Bachillerato en Ciencias de la Ingeniería'    => 'Bachillerato en Ciencias de la Ingeniería',
+                                  'Bibliotecología y Documentación'    => 'Bibliotecología y Documentación',
+                                  'Cartografía y Geomática'    => 'Cartografía y Geomática',
+                                  'Contador Público y Auditor'    => 'Contador Público y Auditor',
+                                  'Dibujante Proyectista'    => 'Dibujante Proyectista',
+                                  'Diseño en Comunicación Visual'    => 'Diseño en Comunicación Visual',
+                                  'Diseño Industrial'    => 'Diseño Industrial',
+                                  'Ingeniería Civil en Computación mención Informática'    => 'Ingeniería Civil en Computación mención Informática',
+                                  'Ingeniería Civil Industrial'    => 'Ingeniería Civil Industrial',
+                                  'Ingeniería Comercial'    => 'Ingeniería Comercial',
+                                  'Ingeniería en Administración Agroindustrial'    => 'Ingeniería en Administración Agroindustrial',
+                                  'Ingeniería en Comercio Internacional'    => 'Ingeniería en Comercio Internacional',
+                                  'Ingeniería en Construcción'    => 'Ingeniería en Construcción',
+                                  'Ingeniería Civil Electrónica'    => 'Ingeniería Civil Electrónica',
+                                  'Ingeniería en Geomensura'    => 'Ingeniería en Geomensura',
+                                  'Ingeniería en Gestión Turística'    => 'Ingeniería en Gestión Turística',
+                                  'Ingeniería en Industria Alimentaria'    => 'Ingeniería en Industria Alimentaria',
+                                  'Ingeniería en Mecánica'    => 'Ingeniería en Mecánica',
+                                  'Ingeniería Civil en Prevención de Riesgos y Medioambiente'    => 'Ingeniería Civil en Prevención de Riesgos y Medioambiente',
+                                  'Ingeniería Química'    => 'Ingeniería Química',
+                                  'Ingeniería en Transporte y Tránsito'    => 'Ingeniería en Transporte y Tránsito',
+                                  'Ingeniería Industrial'    => 'Ingeniería Industrial',
+                                  'Química Industrial'    => 'Química Industrial',
+                                  'Trabajo Social'    => 'Trabajo Social',
+                                  'Ingeniería en Biotecnología'    => 'Ingeniería en Biotecnología',
+                                  'Ingeniería Civil en Obras Civiles'    => 'Ingeniería Civil en Obras Civiles'
+
+                                ); ?>
+
+                        <br /><?php echo form_dropdown('buscar_carrera', $options, set_value('buscar_carrera'))?>
+
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
@@ -314,8 +360,13 @@ body {
         <ul>
 
      <p> 
-            <?=@$error?>
-<span><?php echo validation_errors(); ?></span>
+            
+
+<font color="red" style="font-weight: bold; font-size: 14px;">
+  <?=@$error?></font>
+<font color="red" style="font-weight: bold; font-size: 14px;">
+  <?php echo validation_errors(); ?></font>
+
 <?=form_open_multipart(base_url().'admin/do_upload');
 //aqui se procesará nuestro formulario, controlador comentarios, función insertar_comentarios
 //creamos los arrays que compondran nuestro formulario
@@ -389,6 +440,48 @@ echo form_fieldset('Ingreso Proyecto de Titulo');
                         <?php echo form_input($autor); ?>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>
+                        <label for="carrera">Carrera </label>
+                    </td>
+                    <td>
+                        <?php $options = array(
+                                  ''  => 'Seleccionar Carrera',
+                                  'Ingieneria en Informatica'    => 'Ingieneria en Informatica',
+                                  'Arquitectura'    => 'Arquitectura',
+                                  'Bachillerato en Ciencias de la Ingeniería'    => 'Bachillerato en Ciencias de la Ingeniería',
+                                  'Bibliotecología y Documentación'    => 'Bibliotecología y Documentación',
+                                  'Cartografía y Geomática'    => 'Cartografía y Geomática',
+                                  'Contador Público y Auditor'    => 'Contador Público y Auditor',
+                                  'Dibujante Proyectista'    => 'Dibujante Proyectista',
+                                  'Diseño en Comunicación Visual'    => 'Diseño en Comunicación Visual',
+                                  'Diseño Industrial'    => 'Diseño Industrial',
+                                  'Ingeniería Civil en Computación mención Informática'    => 'Ingeniería Civil en Computación mención Informática',
+                                  'Ingeniería Civil Industrial'    => 'Ingeniería Civil Industrial',
+                                  'Ingeniería Comercial'    => 'Ingeniería Comercial',
+                                  'Ingeniería en Administración Agroindustrial'    => 'Ingeniería en Administración Agroindustrial',
+                                  'Ingeniería en Comercio Internacional'    => 'Ingeniería en Comercio Internacional',
+                                  'Ingeniería en Construcción'    => 'Ingeniería en Construcción',
+                                  'Ingeniería Civil Electrónica'    => 'Ingeniería Civil Electrónica',
+                                  'Ingeniería en Geomensura'    => 'Ingeniería en Geomensura',
+                                  'Ingeniería en Gestión Turística'    => 'Ingeniería en Gestión Turística',
+                                  'Ingeniería en Industria Alimentaria'    => 'Ingeniería en Industria Alimentaria',
+                                  'Ingeniería en Mecánica'    => 'Ingeniería en Mecánica',
+                                  'Ingeniería Civil en Prevención de Riesgos y Medioambiente'    => 'Ingeniería Civil en Prevención de Riesgos y Medioambiente',
+                                  'Ingeniería Química'    => 'Ingeniería Química',
+                                  'Ingeniería en Transporte y Tránsito'    => 'Ingeniería en Transporte y Tránsito',
+                                  'Ingeniería Industrial'    => 'Ingeniería Industrial',
+                                  'Química Industrial'    => 'Química Industrial',
+                                  'Trabajo Social'    => 'Trabajo Social',
+                                  'Ingeniería en Biotecnología'    => 'Ingeniería en Biotecnología',
+                                  'Ingeniería Civil en Obras Civiles'    => 'Ingeniería Civil en Obras Civiles'
+
+                                ); ?>
+                        <?php echo form_dropdown('carrera', $options, set_value('carrera'))?>
+                    </td>
+                </tr>                
+
                 <tr>
                     <td>
                         <?php echo form_label('Descripcion: '); ?>
@@ -421,7 +514,7 @@ echo form_fieldset('Ingreso Proyecto de Titulo');
                     </td>
                     <td>
 <!--con la funcion validation_errors ci nos muestra los errores al pulsar el botón submit, la podemos colocar donde queramos-->
-                  <font color="red" style="font-weight: bold; font-size: 14px; text-decoration: underline"><?php echo validation_errors(); ?></font>
+                  
                     </td>
                 </tr>
                 <tr>
@@ -448,9 +541,10 @@ echo form_fieldset('Ingreso Proyecto de Titulo');
 
 
 
-
         </ul>                     
     </div>
+
+
     <!----------------------------------------------------> 
 
 <footer class="ui-layout-south"></footer>

@@ -53,6 +53,26 @@ class Resultados extends CI_Controller {
             $this->load->view('listado_view'); //display search form
         }
     }
+    public function validar_carrera() {
+        $this->session->unset_userdata('buscar_titulo');
+        $this->session->unset_userdata('buscar_fecha');
+        $this->session->unset_userdata('buscar_descripcion');
+        $this->session->unset_userdata('buscar_resumen');
+
+        $this->form_validation->set_rules('buscar_carrera', 'buscador', 'required|trim|xss_clean');
+        $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
+        $this->form_validation->set_message('min_length', 'El %s debe tener al menos %s carácteres');
+        $this->form_validation->set_message('max_length', 'El %s no puede tener más de %s carácteres');
+        if ($this->form_validation->run() == TRUE) {
+
+            $buscador = $this->input->post('buscar_carrera');
+            $this->session->set_userdata('buscar_carrera', $buscador);
+            redirect(base_url().'resultados', 'refresh');
+        } else {
+
+            $this->load->view('listado_view'); //display search form
+        }
+    }
     
        public function validar_fecha() {
         $this->session->unset_userdata('buscar_autor');
@@ -168,6 +188,27 @@ class Resultados extends CI_Controller {
             $this->pagination->initialize($config); //inicializamos la paginación
             //el array con los datos a paginar ya preparados
             $data["peliculas"] = $this->files_model->total_posts_paginados_autor($buscador, $config['per_page'], $this->uri->segment(3));
+
+            }
+
+            if ($buscador = $this->session->userdata('buscar_carrera')) {
+
+            $buscador = $this->session->userdata('buscar_carrera');
+            $pages = 2; //Número de registros mostrados por páginas
+            $this->load->library('pagination'); //Cargamos la librería de paginación
+            $config['base_url'] = base_url() . 'resultados/pagina'; // parametro base de la aplicación, si tenemos un .htaccess nos evitamos el index.php
+            $config['total_rows'] = $this->files_model->peliculas_carrera($buscador); //calcula el número de filas
+            $config['per_page'] = $pages; //Número de registros mostrados por páginas
+            $config['num_links'] = 20; //Número de links mostrados en la paginación
+            $config['first_link'] = 'Primera'; //primer link
+            $config['last_link'] = 'Última'; //último link
+            $config['next_link'] = 'Siguiente'; //siguiente link
+            $config['prev_link'] = 'Anterior'; //anterior link
+            $config['full_tag_open'] = '<div id="paginacion">'; //el div que debemos maquetar si queremos
+            $config['full_tag_close'] = '</div>'; //el cierre del div de la paginación
+            $this->pagination->initialize($config); //inicializamos la paginación
+            //el array con los datos a paginar ya preparados
+            $data["peliculas"] = $this->files_model->total_posts_paginados_carrera($buscador, $config['per_page'], $this->uri->segment(3));
 
             }
             if ($buscador = $this->session->userdata('buscar_fecha')) {

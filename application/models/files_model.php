@@ -9,7 +9,7 @@ class Files_model extends CI_Model {
     }
     
     //FUNCIÓN PARA INSERTAR LOS DATOS DE LA IMAGEN SUBIDA
-    function subir($titulo,$imagen,$autor,$descripcion,$resumen,$fecha,$hora)
+    function subir($titulo,$imagen,$autor,$descripcion,$resumen,$fecha,$hora,$carrera)
     {
         $data = array(
             'titulo' => $titulo,
@@ -18,7 +18,8 @@ class Files_model extends CI_Model {
             'resumen' => $resumen,
             'fecha' => $fecha,
             'hora' => $hora,            
-            'ruta' => $imagen // ruta base de datos // imagen del controler
+            'ruta' => $imagen,
+            'carrera'=>$carrera
         );
         return $this->db->insert('proyectotitulo', $data);
     }
@@ -154,6 +155,25 @@ class Files_model extends CI_Model {
     //como parámetros de la misma
     function total_posts_paginados_autor($buscador, $por_pagina, $segmento) {
         $this->db->like('autor', $buscador);
+        $consulta = $this->db->get('proyectotitulo', $por_pagina, $segmento);
+        if ($consulta->num_rows() > 0) {
+            foreach ($consulta->result() as $fila) {
+            $data[] = $fila;
+            }
+            return $data;
+        }
+    }
+    function peliculas_carrera($buscador) {
+        $this->db->like('carrera', $buscador);
+        $consulta = $this->db->get('proyectotitulo');
+        return $consulta->num_rows();
+    }
+
+    //obtenemos todos los posts a paginar con la función
+    //total_posts_paginados pasando lo que buscamos, la cantidad por página y el segmento
+    //como parámetros de la misma
+    function total_posts_paginados_carrera($buscador, $por_pagina, $segmento) {
+        $this->db->like('carrera', $buscador);
         $consulta = $this->db->get('proyectotitulo', $por_pagina, $segmento);
         if ($consulta->num_rows() > 0) {
             foreach ($consulta->result() as $fila) {

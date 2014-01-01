@@ -38,6 +38,7 @@ class Admin extends CI_Controller {
 	        $this->form_validation->set_rules('autor','autor','trim|required|xss_clean|max_lenght[50]|min_length[2]|alpha');
 	        $this->form_validation->set_rules('descripcion','descripcion','trim|required|xss_clean|max_lenght[250]|min_length[2]');
 	        $this->form_validation->set_rules('resumen','resumen','trim|required|xss_clean');
+	        $this->form_validation->set_rules('carrera', 'Carrera', 'required|trim|xss_clean');
 
 	        $this->form_validation->set_message('required', 'Campo %s es obligatorio');
 	        //validamos el email con la función de ci valid_email
@@ -69,6 +70,7 @@ class Admin extends CI_Controller {
 				$autor = $this->input->post('autor');    
 	            $descripcion = $this->input->post('descripcion');                            
 	            $resumen = $this->input->post('resumen');
+	            $carrera = $this->input->post('carrera');
 	           	
 
 	            date_default_timezone_set("Chile/Continental");
@@ -83,7 +85,7 @@ class Admin extends CI_Controller {
 		        $imagen = $file_info['file_name'];
 		        
 		        //++++++Manda datos al Modelo++++++//
-		        $subir = $this->files_model->subir($titulo,$imagen,$autor,$descripcion,$resumen,$fecha,$hora);      
+		        $subir = $this->files_model->subir($titulo,$imagen,$autor,$descripcion,$resumen,$fecha,$hora,$carrera);      
 		        //++++++Manda datos al Modelo++++++//
 
 		        $data['imagen'] = $imagen;
@@ -122,12 +124,18 @@ class Admin extends CI_Controller {
         //Si Existe Post y es igual a uno
         if($this->input->post('post') && $this->input->post('post')==1)
         {
-            $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('password', 'Password', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('username', 'Usuario', 'required|trim|xss_clean|alpha_numeric|min_length[4]|is_unique[users.Username]');
+            $this->form_validation->set_rules('password', 'Contraseña', 'required|trim|xss_clean|alpha_numeric|min_length[4]');
+            $this->form_validation->set_rules('pass', 'Confirmar Contraseña', 'required|trim|xss_clean|matches[password]');
           
              
             $this->form_validation->set_message('required','El Campo <b>%s</b> Es Obligatorio');
             $this->form_validation->set_message('numeric','El Campo <b>%s</b> Solo Acepta Números');
+            $this->form_validation->set_message('alpha_numeric','El Campo <b>%s</b> Solo Acepta Números y letras');
+            $this->form_validation->set_message('matches','El Campo <b>%s</b> no coincide con el campo <b>%s</b>');
+            $this->form_validation->set_message('min_length', 'Campo %s debe tener al menos %s car&aacute;cteres');
+            $this->form_validation->set_message('is_unique','El Campo <b>%s</b> ya Existe');
+
             if ($this->form_validation->run() == TRUE)
             {
                 $username = $this->input->post('username');
@@ -157,12 +165,17 @@ class Admin extends CI_Controller {
             //Si existe el post para editar
             if($this->input->post('post') && $this->input->post('post')==1)
             {
-                $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean');
-                $this->form_validation->set_rules('password', 'Password', 'required|trim|xss_clean');
-                
-                 
-                $this->form_validation->set_message('required','El Campo <b>%s</b> Es Obligatorio');
-                $this->form_validation->set_message('numeric','El Campo <b>%s</b> Solo Acepta Números');
+            $this->form_validation->set_rules('username', 'Usuario', 'required|trim|xss_clean|alpha_numeric|min_length[4]');
+            $this->form_validation->set_rules('password', 'Contraseña', 'required|trim|xss_clean|alpha_numeric|min_length[4]');
+            $this->form_validation->set_rules('pass', 'Confirmar Contraseña', 'required|trim|xss_clean|matches[password]');
+          
+             
+            $this->form_validation->set_message('required','El Campo <b>%s</b> Es Obligatorio');
+            $this->form_validation->set_message('numeric','El Campo <b>%s</b> Solo Acepta Números');
+            $this->form_validation->set_message('alpha_numeric','El Campo <b>%s</b> Solo Acepta Números y letras');
+            $this->form_validation->set_message('matches','El Campo <b>%s</b> no coincide con el campo <b>%s</b>');
+            $this->form_validation->set_message('min_length', 'Campo %s debe tener al menos %s car&aacute;cteres');
+            
                 if ($this->form_validation->run() == TRUE)
                 {
                     $username = $this->input->post('username');

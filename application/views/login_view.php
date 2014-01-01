@@ -253,6 +253,51 @@ body {
                 </div>
             </div>
             <div>
+                <h3><a href="#" rel="4" >Buscar Carrera</a></h3>
+                <div class="submenu">
+                    <ul>
+                        <?=form_open(base_url().'resultados/validar_carrera')?>
+                        <?php $options = array(
+                                  ''  => 'Seleccionar Carrera',
+                                  'Ingieneria en Informatica'    => 'Ingieneria en Informatica',
+                                  'Arquitectura'    => 'Arquitectura',
+                                  'Bachillerato en Ciencias de la Ingeniería'    => 'Bachillerato en Ciencias de la Ingeniería',
+                                  'Bibliotecología y Documentación'    => 'Bibliotecología y Documentación',
+                                  'Cartografía y Geomática'    => 'Cartografía y Geomática',
+                                  'Contador Público y Auditor'    => 'Contador Público y Auditor',
+                                  'Dibujante Proyectista'    => 'Dibujante Proyectista',
+                                  'Diseño en Comunicación Visual'    => 'Diseño en Comunicación Visual',
+                                  'Diseño Industrial'    => 'Diseño Industrial',
+                                  'Ingeniería Civil en Computación mención Informática'    => 'Ingeniería Civil en Computación mención Informática',
+                                  'Ingeniería Civil Industrial'    => 'Ingeniería Civil Industrial',
+                                  'Ingeniería Comercial'    => 'Ingeniería Comercial',
+                                  'Ingeniería en Administración Agroindustrial'    => 'Ingeniería en Administración Agroindustrial',
+                                  'Ingeniería en Comercio Internacional'    => 'Ingeniería en Comercio Internacional',
+                                  'Ingeniería en Construcción'    => 'Ingeniería en Construcción',
+                                  'Ingeniería Civil Electrónica'    => 'Ingeniería Civil Electrónica',
+                                  'Ingeniería en Geomensura'    => 'Ingeniería en Geomensura',
+                                  'Ingeniería en Gestión Turística'    => 'Ingeniería en Gestión Turística',
+                                  'Ingeniería en Industria Alimentaria'    => 'Ingeniería en Industria Alimentaria',
+                                  'Ingeniería en Mecánica'    => 'Ingeniería en Mecánica',
+                                  'Ingeniería Civil en Prevención de Riesgos y Medioambiente'    => 'Ingeniería Civil en Prevención de Riesgos y Medioambiente',
+                                  'Ingeniería Química'    => 'Ingeniería Química',
+                                  'Ingeniería en Transporte y Tránsito'    => 'Ingeniería en Transporte y Tránsito',
+                                  'Ingeniería Industrial'    => 'Ingeniería Industrial',
+                                  'Química Industrial'    => 'Química Industrial',
+                                  'Trabajo Social'    => 'Trabajo Social',
+                                  'Ingeniería en Biotecnología'    => 'Ingeniería en Biotecnología',
+                                  'Ingeniería Civil en Obras Civiles'    => 'Ingeniería Civil en Obras Civiles'
+
+                                ); ?>
+
+                        <br /><?php echo form_dropdown('buscar_carrera', $options, set_value('buscar_carrera'))?>
+
+                        <input type="submit" value="Buscar" />
+                        <?=form_close()?>
+                    </ul>
+                </div>
+            </div>
+            <div>
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
@@ -304,9 +349,9 @@ body {
 			<div class="grid_8 push_2" id="formulario_login">
 				<div class="grid_6 push_1" id="campos_login">
 					<?=form_open(base_url().'login/new_user')?>
-					<label for="username">Nombre de usuario:</label>
+					<label for="username"><h5>Usuario:</h5></label>
 					<?=form_input($username)?><p><?=form_error('username')?></p>
-					<label for="password">Introduce tu password:</label>
+					<label for="password"><h5>Contraseña:</h5></label>
 					<?=form_password($password)?><p><?=form_error('password')?></p>
 					<?=form_hidden('token',$token)?>
 					<?=form_submit($submit)?>
