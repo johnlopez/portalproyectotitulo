@@ -39,6 +39,8 @@ class Admin extends CI_Controller {
 	        $this->form_validation->set_rules('descripcion','descripcion','trim|required|xss_clean|max_lenght[250]|min_length[2]');
 	        $this->form_validation->set_rules('resumen','resumen','trim|required|xss_clean');
 	        $this->form_validation->set_rules('carrera', 'Carrera', 'required|trim|xss_clean');
+	        $this->form_validation->set_rules('f_rangeStart', 'Fecha','required|trim|xss_clean');
+
 
 	        $this->form_validation->set_message('required', 'Campo %s es obligatorio');
 	        //validamos el email con la función de ci valid_email
@@ -71,6 +73,7 @@ class Admin extends CI_Controller {
 	            $descripcion = $this->input->post('descripcion');                            
 	            $resumen = $this->input->post('resumen');
 	            $carrera = $this->input->post('carrera');
+	            $fecha_r = $this->input->post('f_rangeStart');
 	           	
 
 	            date_default_timezone_set("Chile/Continental");
@@ -85,7 +88,7 @@ class Admin extends CI_Controller {
 		        $imagen = $file_info['file_name'];
 		        
 		        //++++++Manda datos al Modelo++++++//
-		        $subir = $this->files_model->subir($titulo,$imagen,$autor,$descripcion,$resumen,$fecha,$hora,$carrera);      
+		        $subir = $this->files_model->subir($titulo,$imagen,$autor,$descripcion,$resumen,$fecha,$hora,$carrera,$fecha_r);      
 		        //++++++Manda datos al Modelo++++++//
 
 		        $data['imagen'] = $imagen;

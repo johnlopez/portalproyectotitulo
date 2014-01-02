@@ -6,7 +6,11 @@
                Universidad Tecnologica Metropolitana
         </title>
 
-        
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/css/jscal2.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/css/border-radius.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/css/steel/steel.css" />
+    <script type="text/javascript" src="<?php echo base_url()?>public/js/jscal2.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>public/js/lang/es.js"></script>
 
     
     
@@ -443,7 +447,7 @@ echo form_fieldset('Ingreso Proyecto de Titulo');
 
                 <tr>
                     <td>
-                        <label for="carrera">Carrera </label>
+                        <label for="carrera">Carrera: </label>
                     </td>
                     <td>
                         <?php $options = array(
@@ -480,7 +484,41 @@ echo form_fieldset('Ingreso Proyecto de Titulo');
                                 ); ?>
                         <?php echo form_dropdown('carrera', $options, set_value('carrera'))?>
                     </td>
-                </tr>                
+                </tr>   
+
+                <tr>
+                    <td>
+                        <label for="f_rangeStart" >Fecha</label> 
+                        
+                    </td>
+                    <td>
+                        <input readonly="readonly" size="15" type="text" name="f_rangeStart" value="" id="f_rangeStart" size="50" style="width:50%"  />        
+                        <button id="f_rangeStart_trigger" size="50" >...</button>
+                                         <script type="text/javascript">
+                 RANGE_CAL_1 = new Calendar({
+                         inputField: "f_rangeStart",
+                         dateFormat: "%Y/%m/%d",
+                         trigger: "f_rangeStart_trigger",
+                         bottomBar: false,
+                         onSelect: function() {
+                                 var date = Calendar.intToDate(this.selection.get());
+                                 LEFT_CAL.args.min = date;
+                                 LEFT_CAL.redraw();
+                                 this.hide();
+                         }
+                 });
+                 function clearRangeStart() {
+                         document.getElementById("f_rangeStart").value = "";
+                         LEFT_CAL.args.min = null;
+                         LEFT_CAL.redraw();
+                 };
+                </script>
+                        
+                    </td>
+                </tr>
+                <tr>
+
+          
 
                 <tr>
                     <td>
@@ -540,9 +578,6 @@ echo form_fieldset('Ingreso Proyecto de Titulo');
     </p> 
 
 
-
-        </ul>                     
-    </div>
 
 
     <!----------------------------------------------------> 
