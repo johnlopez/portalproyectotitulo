@@ -16,11 +16,11 @@ class Files_model extends CI_Model {
             'autor' => $autor,
             'descripcion' => $descripcion,
             'resumen' => $resumen,
-            'fecha' => $fecha,
+            'fecha' => $fecha_r,
             'hora' => $hora,            
             'ruta' => $imagen,
             'carrera'=>$carrera,
-            'fecha_r'=>$fecha_r
+            'fecha_r'=>$fecha
         );
         return $this->db->insert('proyectotitulo', $data);
     }

@@ -35,7 +35,7 @@ class Admin extends CI_Controller {
 		{
 			//++++++VALIDACIONES++++++++++++++//
 			$this->form_validation->set_rules('titulo','titulo','trim|required|xss_clean|max_lenght[50]|min_length[2]');
-	        $this->form_validation->set_rules('autor','autor','trim|required|xss_clean|max_lenght[50]|min_length[2]|alpha');
+	        $this->form_validation->set_rules('autor','autor','trim|required|xss_clean|max_lenght[50]|min_length[2]');
 	        $this->form_validation->set_rules('descripcion','descripcion','trim|required|xss_clean|max_lenght[250]|min_length[2]');
 	        $this->form_validation->set_rules('resumen','resumen','trim|required|xss_clean');
 	        $this->form_validation->set_rules('carrera', 'Carrera', 'required|trim|xss_clean');

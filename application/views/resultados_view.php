@@ -343,7 +343,9 @@ body {
 
 
     <?php if(!$peliculas){?>
-    No hay nada que mostrar
+    No se encontraron Resultados
+
+    <span><?php echo validation_errors(); ?></span>
     <?php
     }else{?>
 

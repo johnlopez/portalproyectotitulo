@@ -209,6 +209,7 @@ body {
     <header class="ui-layout-north">
         <h1>
             <img alt="logo" src="<?php echo base_url()?>public/img/utem_estado_de_chile.png">
+
         </h1>
         <div id="top-menu">
             <?=anchor('vista/', 'Inicio'); ?>
@@ -303,6 +304,7 @@ body {
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
+                        <a>(aaaa-mm-dd)</a>
                         <?=form_open(base_url().'resultados/validar_fecha')?>
                         <input type="text" name="buscar_fecha" id="buscar_fecha" />
                         <input type="submit" value="Buscar" />
@@ -344,7 +346,7 @@ body {
                 <span><?php echo validation_errors(); ?></span>
                     
                     
-                <?php echo heading('Tesis Disponibles para Descargar:', 3);?>
+                <?php echo heading('Proyectos de Titulo Disponibles para Descargar:', 3);?>
                     <?//si NO hay BUSQUEDA de resultados  mostramos todos los datos?>
                     <?php if($files){ ?>
                         

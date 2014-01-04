@@ -18,6 +18,8 @@ class Resultados extends CI_Controller {
         $this->session->unset_userdata('buscar_fecha');
         $this->session->unset_userdata('buscar_descripcion');
         $this->session->unset_userdata('buscar_resumen');
+        $this->session->unset_userdata('buscar_carrera');
+
 
         $this->form_validation->set_rules('buscar_titulo', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
@@ -29,8 +31,9 @@ class Resultados extends CI_Controller {
             $this->session->set_userdata('buscar_titulo', $buscador);
             redirect(base_url().'resultados', 'refresh');
         } else {
+            $data["peliculas"] = NULL;
 
-            $this->load->view('listado_view'); //display search form
+            $this->load->view('resultados_view',$data); //display search form
         }
     }
     public function validar_autor() {
@@ -38,6 +41,7 @@ class Resultados extends CI_Controller {
         $this->session->unset_userdata('buscar_fecha');
         $this->session->unset_userdata('buscar_descripcion');
         $this->session->unset_userdata('buscar_resumen');
+        $this->session->unset_userdata('buscar_carrera');
 
         $this->form_validation->set_rules('buscar_autor', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
@@ -50,7 +54,9 @@ class Resultados extends CI_Controller {
             redirect(base_url().'resultados', 'refresh');
         } else {
 
-            $this->load->view('listado_view'); //display search form
+             $data["peliculas"] = NULL;
+
+            $this->load->view('resultados_view',$data);  //display search form
         }
     }
     public function validar_carrera() {
@@ -58,6 +64,7 @@ class Resultados extends CI_Controller {
         $this->session->unset_userdata('buscar_fecha');
         $this->session->unset_userdata('buscar_descripcion');
         $this->session->unset_userdata('buscar_resumen');
+        $this->session->unset_userdata('buscar_autor');
 
         $this->form_validation->set_rules('buscar_carrera', 'buscador', 'required|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
@@ -70,7 +77,9 @@ class Resultados extends CI_Controller {
             redirect(base_url().'resultados', 'refresh');
         } else {
 
-            $this->load->view('listado_view'); //display search form
+             $data["peliculas"] = NULL;
+
+            $this->load->view('resultados_view',$data); 
         }
     }
     
@@ -79,6 +88,7 @@ class Resultados extends CI_Controller {
         $this->session->unset_userdata('buscar_titulo');
         $this->session->unset_userdata('buscar_descripcion');
         $this->session->unset_userdata('buscar_resumen');
+        $this->session->unset_userdata('buscar_carrera');
 
         $this->form_validation->set_rules('buscar_fecha', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
@@ -91,7 +101,9 @@ class Resultados extends CI_Controller {
             redirect(base_url().'resultados', 'refresh');
         } else {
 
-            $this->load->view('listado_view'); //display search form
+             $data["peliculas"] = NULL;
+
+            $this->load->view('resultados_view',$data); 
         }
     }
 
@@ -99,7 +111,8 @@ class Resultados extends CI_Controller {
         $this->session->unset_userdata('buscar_autor');
         $this->session->unset_userdata('buscar_fecha');
         $this->session->unset_userdata('buscar_titulo');
-        $this->session->unset_userdata('buscar_resumen');    
+        $this->session->unset_userdata('buscar_resumen');
+        $this->session->unset_userdata('buscar_carrera');    
 
         $this->form_validation->set_rules('buscar_descripcion', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
@@ -112,7 +125,9 @@ class Resultados extends CI_Controller {
             redirect(base_url().'resultados', 'refresh');
         } else {
 
-            $this->load->view('listado_view'); //display search form
+             $data["peliculas"] = NULL;
+
+            $this->load->view('resultados_view',$data); 
         }
     }
 
@@ -121,6 +136,7 @@ class Resultados extends CI_Controller {
         $this->session->unset_userdata('buscar_fecha');
         $this->session->unset_userdata('buscar_descripcion');
         $this->session->unset_userdata('buscar_titulo');
+        $this->session->unset_userdata('buscar_carrera');
         
         $this->form_validation->set_rules('buscar_resumen', 'buscador', 'required|min_length[2]|max_length[20]|trim|xss_clean');
         $this->form_validation->set_message('required', 'El %s no puede ir vacío!');
@@ -133,7 +149,9 @@ class Resultados extends CI_Controller {
             redirect(base_url().'resultados', 'refresh');
         } else {
 
-            $this->load->view('listado_view'); //display search form
+             $data["peliculas"] = NULL;
+
+            $this->load->view('resultados_view',$data); 
         }
     }
 
@@ -141,13 +159,14 @@ class Resultados extends CI_Controller {
 
     function index() {
         $files = get_filenames($this->folder, FALSE);
-    
+        $data["peliculas"] = NULL;
         if($files){
             $data = array('titulo' => 'Buscador', 
                       
                       'files'=>$files
                       
                       );
+
              
         
             if ($buscador = $this->session->userdata('buscar_titulo')) {
