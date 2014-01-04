@@ -1441,9 +1441,9 @@ select
         </div>
     </header>
     <!--Menu de la izquierda-->
-    <div id="left-menu" class="ui-layout-west">
+    <div id="left-menu" class="ui-layout-west" >
         <div id="accordion">
-            <!--Seccion control de bienes-->
+            <!--Seccion control de bienes
             <div>
                 <h3><a href="#" rel="3" >Acerca de la UTEM</a></h3>
                 <div class="submenu">
@@ -1454,11 +1454,14 @@ select
                     </ul>
                 </div>
             </div>
+            -->
             <div>
                 <h3><a href="#" rel="4" >Gestionar Proyectos de Titulo</a></h3>
                 <div class="submenu">
                     <ul>
+                      <li>
                         <?=br(1).anchor('admin/', 'Agregar Proyectos de Titulo'); ?>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -1466,7 +1469,9 @@ select
                 <h3><a href="#" rel="4" >Gestionar Usuarios</a></h3>
                 <div class="submenu">
                     <ul>
-                        <?=br(1).anchor('admin/agregar', 'Usuarios'); ?>
+                      <li>
+                        <?=br(1).anchor('admin/agregar', 'Agregar/Editar/Eliminar'); ?>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -1543,6 +1548,7 @@ select
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
+                        (aaaa/mm/dd)
                         <?=form_open(base_url().'resultados/validar_fecha')?>
                         <input type="text" name="buscar_fecha" id="buscar_fecha" />
                         <input type="submit" value="Buscar" />
@@ -1576,7 +1582,7 @@ select
         </div>      
     </div>
     </br>
-    <div id="carousel" class="ui-layout-center">
+<div id="carousel" class="ui-layout-center">
         <ul>
 
           <div style="float:left;">
@@ -1801,7 +1807,7 @@ echo form_fieldset('Ingreso Proyecto de Titulo');
 
 </div>
 
-<div style="float:right;"><img alt="logo" src="<?php echo base_url()?>public/img/mocube.jpg"></div>
+<div style="float:right;"><img alt="logo" src="<?php echo base_url()?>public/img/azul.jpg"></div>
 
 
     <!----------------------------------------------------> 
