@@ -108,101 +108,169 @@ body {
 
 
 /////////////////////// TABLA CSS //////////////////////////////////////
+
 .CSSTableGenerator {
-    margin:0px;padding:0px;
-    width:100%;
-    box-shadow: 10px 10px 5px #888888;
-    border:1px solid #3f7f00;
-    
-    -moz-border-radius-bottomleft:8px;
-    -webkit-border-bottom-left-radius:8px;
-    border-bottom-left-radius:8px;
-    
-    -moz-border-radius-bottomright:8px;
-    -webkit-border-bottom-right-radius:8px;
-    border-bottom-right-radius:8px;
-    
-    -moz-border-radius-topright:8px;
-    -webkit-border-top-right-radius:8px;
-    border-top-right-radius:8px;
-    
-    -moz-border-radius-topleft:8px;
-    -webkit-border-top-left-radius:8px;
-    border-top-left-radius:8px;
+  margin:0px;padding:0px;
+  width:100%;
+  box-shadow: 10px 10px 5px #888888;
+  border:1px solid #000000;
+  
+  -moz-border-radius-bottomleft:0px;
+  -webkit-border-bottom-left-radius:0px;
+  border-bottom-left-radius:0px;
+  
+  -moz-border-radius-bottomright:0px;
+  -webkit-border-bottom-right-radius:0px;
+  border-bottom-right-radius:0px;
+  
+  -moz-border-radius-topright:0px;
+  -webkit-border-top-right-radius:0px;
+  border-top-right-radius:0px;
+  
+  -moz-border-radius-topleft:0px;
+  -webkit-border-top-left-radius:0px;
+  border-top-left-radius:0px;
 }.CSSTableGenerator table{
     border-collapse: collapse;
         border-spacing: 0;
-    width:100%;
-    height:100%;
-    margin:0px;padding:0px;
+  width:100%;
+  height:100%;
+  margin:0px;padding:0px;
 }.CSSTableGenerator tr:last-child td:last-child {
-    -moz-border-radius-bottomright:8px;
-    -webkit-border-bottom-right-radius:8px;
-    border-bottom-right-radius:8px;
+  -moz-border-radius-bottomright:0px;
+  -webkit-border-bottom-right-radius:0px;
+  border-bottom-right-radius:0px;
 }
 .CSSTableGenerator table tr:first-child td:first-child {
-    -moz-border-radius-topleft:8px;
-    -webkit-border-top-left-radius:8px;
-    border-top-left-radius:8px;
+  -moz-border-radius-topleft:0px;
+  -webkit-border-top-left-radius:0px;
+  border-top-left-radius:0px;
 }
 .CSSTableGenerator table tr:first-child td:last-child {
-    -moz-border-radius-topright:8px;
-    -webkit-border-top-right-radius:8px;
-    border-top-right-radius:8px;
+  -moz-border-radius-topright:0px;
+  -webkit-border-top-right-radius:0px;
+  border-top-right-radius:0px;
 }.CSSTableGenerator tr:last-child td:first-child{
-    -moz-border-radius-bottomleft:8px;
-    -webkit-border-bottom-left-radius:8px;
-    border-bottom-left-radius:8px;
+  -moz-border-radius-bottomleft:0px;
+  -webkit-border-bottom-left-radius:0px;
+  border-bottom-left-radius:0px;
 }.CSSTableGenerator tr:hover td{
-    
+  
 }
-.CSSTableGenerator tr:nth-child(odd){ background-color:#d4ffaa; }
-.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
-    vertical-align:middle;
-    
-    
-    border:1px solid #3f7f00;
-    border-width:0px 1px 1px 0px;
-    text-align:left;
-    padding:7px;
-    font-size:10px;
-    font-family:Arial;
-    font-weight:normal;
-    color:#000000;
+.CSSTableGenerator tr:nth-child(odd){ background-color:#99BCBF; }
+.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }
+
+.CSSTableGenerator td{
+  vertical-align:middle;
+  
+  
+  border:1px solid #000000;
+  border-width:0px 1px 1px 0px;
+  text-align:left;
+  padding:7px;
+  font-size:16px;
+  font-family:Arial;
+  font-weight:normal;
+  color:#000000;
 }.CSSTableGenerator tr:last-child td{
-    border-width:0px 1px 0px 0px;
+  border-width:0px 1px 0px 0px;
 }.CSSTableGenerator tr td:last-child{
-    border-width:0px 0px 1px 0px;
+  border-width:0px 0px 1px 0px;
 }.CSSTableGenerator tr:last-child td:last-child{
-    border-width:0px 0px 0px 0px;
+  border-width:0px 0px 0px 0px;
 }
 .CSSTableGenerator tr:first-child td{
-        background:-o-linear-gradient(bottom, #4d9307 5%, #336005 100%);    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4d9307), color-stop(1, #336005) );
-    background:-moz-linear-gradient( center top, #4d9307 5%, #336005 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#4d9307", endColorstr="#336005");  background: -o-linear-gradient(top,#4d9307,336005);
+    background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #99BCBF), color-stop(1, #99BCBF) );
+  background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");  background: -o-linear-gradient(top,#005fbf,003f7f);
 
-    background-color:#4d9307;
-    border:0px solid #3f7f00;
-    text-align:center;
-    border-width:0px 0px 1px 1px;
-    font-size:14px;
-    font-family:Arial;
-    font-weight:bold;
-    color:#ffffff;
+  background-color:#005fbf;
+  border:0px solid #000000;
+  text-align:center;
+  border-width:0px 0px 1px 1px;
+  font-size:14px;
+  font-family:Arial;
+  font-weight:bold;
+  color:#ffffff;
 }
 .CSSTableGenerator tr:first-child:hover td{
-    background:-o-linear-gradient(bottom, #4d9307 5%, #336005 100%);    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4d9307), color-stop(1, #336005) );
-    background:-moz-linear-gradient( center top, #4d9307 5%, #336005 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#4d9307", endColorstr="#336005");  background: -o-linear-gradient(top,#4d9307,336005);
+  background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+  background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");  background: -o-linear-gradient(top,#005fbf,003f7f);
 
-    background-color:#4d9307;
+  background-color:#005fbf;
 }
 .CSSTableGenerator tr:first-child td:first-child{
-    border-width:0px 0px 1px 0px;
+  border-width:0px 0px 1px 0px;
 }
 .CSSTableGenerator tr:first-child td:last-child{
-    border-width:0px 0px 1px 1px;
-}select{
+  border-width:0px 0px 1px 1px;
+}
+table { background:#D3E4E5;
+ border:1px solid gray;
+ border-collapse:collapse;
+ color:#fff;
+ font:normal 16px verdana, arial, helvetica, sans-serif;
+}
+caption { border:1px solid #5C443A;
+ color:#5C443A;
+ font-weight:bold;
+ letter-spacing:20px;
+ padding:6px 4px 8px 0px;
+ text-align:center;
+ text-transform:uppercase;
+}
+td, th { color:#363636;
+ padding:.4em;
+}
+tr { border:1px dotted gray;
+}
+thead th, tfoot th { background:#0082AA;
+ color:#FFFFFF;
+ padding:3px 10px 3px 10px;
+ text-align:left;
+ text-transform:uppercase;
+}
+tbody td a { color:#363636;
+ text-decoration:none;
+}
+tbody td a:visited { color:gray;
+ text-decoration:line-through;
+}
+tbody td a:hover { text-decoration:underline;
+}
+tbody th a { color:#363636;
+ font-weight:normal;
+ text-decoration:none;
+}
+tbody th a:hover { color:#363636;
+}
+tbody td+td+td+td a { 
+ background-position:left center;
+ background-repeat:no-repeat;
+ color:#03476F;
+ padding-left:15px;
+}
+tbody td+td+td+td a:visited { 
+ background-position:left center;
+ background-repeat:no-repeat;
+}
+tbody th, tbody td { text-align:left;
+ vertical-align:top;
+}
+tfoot td { background:#0082AA;
+ color:#FFFFFF;
+ padding-top:3px;
+}
+tr:nth-child(odd){ background-color:#D3E4E5; }
+tr:nth-child(even)    { background-color:#ffffff; }
+tbody tr:hover { background:#99BCBF;
+ border:1px solid #03476F;
+ color:#000000;
+}
+
+
+select{
   margin: 20;
   font-size: 100%;
   vertical-align: middle;
@@ -1322,7 +1390,7 @@ input[type="color"],
 }
 
 input{
-  width: 100px;
+  width: 150px;
 }
 
 textarea
@@ -1424,14 +1492,14 @@ select
 
 
 
-</head>    
+</head>  
 <body>
     <header class="ui-layout-north">
         <h1>
             <img alt="logo" src="<?php echo base_url()?>public/img/utem_estado_de_chile.png">
         </h1>
         <div id="top-menu">
-            <?=anchor('listado/', 'Inicio'); ?>
+            
             <?=anchor('listado/', 'Proyectos de Titulo'); ?>
             <?=anchor('login/', 'Registrarse'); ?>
         </div>
@@ -1554,121 +1622,76 @@ select
         </div>      
     </div>
     </br>
-    <div id="carousel" class="ui-layout-center">
-        <ul>
+<div id="carousel" class="ui-layout-center">
+  <div style="float:left; width: 980px;" >
 
     <p> 
-
-
-
-
-
-<?php
-
-
-$v1 = $_POST['variable1'];
-$v2 = $_POST['variable2'];
-$v3 = $_POST['variable3'];
-$v4 = $_POST['variable4'];
-$v5 = $_POST['variable5'];
-$v6 = $_POST['variable6'];
-$v7 = $_POST['variable7'];
-    
-
-?>
-
-
-
-<div class="container_12">
-
-    <?php if($files){ ?>
-          
-    <?php //si hay resultados los mostramos
-
-
-
-    ?>
-
-
-    <div class="CSSTableGenerator" >
-        <table >
-        <div class="grid_12 resultados">
-
-
-            <div class="grid_12" id="head_resultados">
+      <?php
+      $v1 = $_POST['variable1'];
+      $v2 = $_POST['variable2'];
+      $v3 = $_POST['variable3'];
+      $v4 = $_POST['variable4'];
+      $v5 = $_POST['variable5'];
+      $v6 = $_POST['variable6'];
+      $v7 = $_POST['variable7'];
+      ?>
+      <div class="container_12">
+        <?php if($files){ ?>
+        <?php //si hay resultados los mostramos?>
+        <div class="CSSTableGenerator" >
+          <table >
+            <div class="grid_12 resultados">
+              <div class="grid_12" id="head_resultados">
                 <tr>
                 <td><div class="grid_1">Proyecto de Titulo</div></td>
-                
                 </tr>
-            </div>
-                
-            <div class="grid_12" id="body_rñesultados">
-            
-             <?php foreach($files as $file){         ?>
-
-            <?php
-
+              </div>
+              <div class="grid_12" id="body_rñesultados">
+                <?php foreach($files as $file){  ?>
+                <?php
                 if ($file ==$v6) {
-                    # code...
-                
-            ?>
+                ?>
+                <tr><td><div class="grid_1">Titulo</div></td></tr>
+                <tr><td><div class="grid_1"><?php echo $v1 ?></div></td></tr>
 
-                    <tr><td><div class="grid_1">Titulo</div></td></tr>
-                    <tr><td><div class="grid_1"><?php echo $v1 ?></div></td></tr>
+                <tr><td><div class="grid_1">Autor</div></td></tr>
+                <tr><td><div class="row_2"><?php echo $v2 ?></div></td></tr>
 
-                    <tr><td><div class="grid_1">Autor</div></td></tr>
-                    <tr><td><div class="row_2"><?php echo $v2 ?></div></td></tr>
-                    
-                    <tr><td><div class="grid_1">Carrera</div></td></tr>
-                    <tr><td><div class="row_2"><?php echo $v7 ?></div></td></tr>
+                <tr><td><div class="grid_1">Carrera</div></td></tr>
+                <tr><td><div class="row_2"><?php echo $v7 ?></div></td></tr>
 
-                    <tr><td><div class="grid_1">Fecha</div></td></tr>
-                    <tr><td><div class="grid_3"><?php echo $v3 ?></div></td></tr>
-                    
-                    <tr><td><div class="grid_1">Descripcion</div></td></tr>
-                    <tr><td><div class="grid_4"><?php echo $v4 ?></div></td></tr>
-                    
-                    <tr><td><div class="grid_1">Resumen</div></td></tr>
-                    <tr><td><div class="grid_5"><?php echo $v5 ?></div></td></tr>
-                    
-                    <tr><td><div class="grid_1">Archivo</div></td></tr>
-                    <tr><td><div class="grid_6"><?php echo anchor('admin/downloads/'.$file, $file).br(1); ?></div></td></tr>
-           
-            
+                <tr><td><div class="grid_1">Fecha</div></td></tr>
+                <tr><td><div class="grid_3"><?php echo $v3 ?></div></td></tr>
 
-          
-            <?php
-              
-            }
-            ?>
-                                
-            <?php } ?>
+                <tr><td><div class="grid_1">Descripcion</div></td></tr>
+                <tr><td><div class="grid_4"><?php echo $v4 ?></div></td></tr>
+
+                <tr><td><div class="grid_1">Resumen</div></td></tr>
+                <tr><td><div class="grid_5"><?php echo $v5 ?></div></td></tr>
+
+                <tr><td><div class="grid_1">Archivo</div></td></tr>
+                <tr><td><div class="grid_6"><img alt="logo" src="<?php echo base_url()?>public/img/right.png"><?php echo anchor('admin/downloads/'.$file, $file).br(1); ?></div></td></tr>
+                <?php
+                }
+                ?>
+                <?php } ?>
+              </div>
             </div>
-        </div>
-        
-    
-
-    <?php } //if($files)
-    else{?>
+            <?php } //if($files)
+            else{?>
             <?php echo heading('No hay archivos para descargar ', 3).anchor('admin', 'Subir un Archivo');?>
-    <?php } ?>
-        </table>
+            <?php } ?>
+          </table>
+        </div>
+      </div>
+    </p> 
     </div>
+
+<div style="float:right;"><img alt="logo" src="<?php echo base_url()?>public/img/azulcopia.jpg"></div>
+
+                  
 </div>
 
-
-
-
-
-
-
-
-
-    </p> 
-
-
-        </ul>                     
-    </div>
     <!----------------------------------------------------> 
 
 <footer class="ui-layout-south"></footer>

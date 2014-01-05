@@ -1657,7 +1657,7 @@ form:after {
             <img alt="logo" src="<?php echo base_url()?>public/img/utem_estado_de_chile.png">
         </h1>
         <div id="top-menu">
-            <?=anchor('vista/', 'Inicio'); ?>
+            
             <?=anchor('listado/', 'Proyectos de Titulo'); ?>
             <?=anchor('login/', 'Registrarse'); ?>
         </div>

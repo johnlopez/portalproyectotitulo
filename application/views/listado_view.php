@@ -1390,7 +1390,7 @@ input[type="color"],
 }
 
 input{
-  width: 100px;
+  width: 150px;
 }
 
 textarea
@@ -1500,7 +1500,7 @@ select
 
         </h1>
         <div id="top-menu">
-            <?=anchor('vista/', 'Inicio'); ?>
+            
             <?=anchor('listado/', 'Proyectos de Titulo'); ?>
             <?=anchor('login/', 'Registrarse'); ?>
         </div>
@@ -1509,16 +1509,7 @@ select
     <div id="left-menu" class="ui-layout-west">
         <div id="accordion">
             <!--Seccion control de bienes-->
-            <div>
-                <h3><a href="#" rel="3" >Acerca de la UTEM</a></h3>
-                <div class="submenu">
-                    <ul>
-                      <li>hola</li>
-                      <li>hola</li>
-                      <li>hola</li>
-                    </ul>
-                </div>
-            </div>
+
             <div>
                 <h3><a href="#" rel="4" >Buscar Titulo</a></h3>
                 <div class="submenu">
@@ -1626,137 +1617,92 @@ select
         </div>      
     </div>
     </br>
-    <div id="carousel" class="ui-layout-center">
-        <ul>
 
-
-
-
-
-            <p> 
-
-
-
-
-
-                <div class="container_12">
-                    
-                <span><?php echo validation_errors(); ?></span>
-                    
-                    
-                
-                    <?//si NO hay BUSQUEDA de resultados  mostramos todos los datos?>
-                    <?php if($files){ ?>
+<div id="carousel" class="ui-layout-center" >
+    <div style="float:left; width: 1200px;" >
+        <div class="container_12">
+            <span><?php echo validation_errors(); ?></span>
+            <?php if($files){ ?>
+                <table summary="Submitted table designs">
+                    <caption><h3>Proyectos de Titulo Disponibles</h3></caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Palabras Clave</th>
+                            <th scope="col">Ver Detalles</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">
+                            <div style="font-color=#fff"></div>
+                            <?= $paginacion;?></th>
+                            <td colspan="4"></td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <?php foreach($noticias as $n) {?>
+                            <?php foreach($files as $file){
+                                if ($n['ruta']==$file) {?>
+                                    <tr>
+                                        <td><div class="grid_3"><?php echo $n['fecha'] ?></div></td>
+                                        <td>
+                                            <div class="grid_1"><?php echo $n['titulo']; 
+                                                $a=$n['titulo'];
+                                                $b=$n['autor']; 
+                                                $c=$n['fecha']; 
+                                                $d=$n['descripcion']; 
+                                                $e=$n['resumen']; 
+                                                $f=$n['ruta'];
+                                                $g=$n['carrera'];
+                                                ?>
+                                                <form action="http://localhost/roles_usuarios/listado/detalles" method="post">
+                                                <input type="hidden" name="variable1" value="<?php echo $a ?>" />
+                                                <input type="hidden" name="variable2" value="<?php echo $b ?>" />
+                                                <input type="hidden" name="variable3" value="<?php echo $c ?>" />
+                                                <input type="hidden" name="variable4" value="<?php echo $d ?>" />
+                                                <input type="hidden" name="variable5" value="<?php echo $e ?>" />
+                                                <input type="hidden" name="variable6" value="<?php echo $f ?>" />
+                                                <input type="hidden" name="variable7" value="<?php echo $g ?>" />
+                                            </div>
+                                        </td>
+                                        <td><div class="grid_2"><?php echo $n['autor'] ?></div></td>
+                                        <td><div class="grid_2"><?php echo $n['descripcion'] ?></div></td>
+                                        <td>
+                                          <input type="submit" value="Ver Detalles" />
+                                          </form>
+                                        </td>
+                                        <!--
+                                        <td><div class="grid_4"><?php echo $fila->descripcion ?></div></td>
+                                        <td><div class="grid_5"><?php echo $fila->resumen ?></div></td>
+                                        <td><div class="grid_6"><?php echo anchor('admin/downloads/'.$file, $file).br(1); ?></div></td>
+                                        -->
+                                    </tr>
+                                <?php }//(if )?>
+                            <?php }//foreach($files as $file) ?>
+                        <?php } //foreach($noticias as $n)?>
+                        </div>
+                        </div>
                         
-                            
-                                  <table summary="Submitted table designs">
-                                    <caption>Proyectos de Titulo Disponibles</caption>
-                                    <thead>
-                                      <tr>
-                                        <th scope="col">Fecha</th>
-                                        <th scope="col">Titulo</th>
-                                        <th scope="col">Autor</th>
-                                        <th scope="col">Palabras Clave</th>
-                                        <th scope="col">Ver Detalles</th>
-                                      </tr>
-                                    </thead>
-                                    <tfoot>
-                                      <tr>
-                                        <th scope="row">
-                                          <div style="font-color=#fff"></div>
-                                          <?= $paginacion;?></th>
-                                        <td colspan="4"></td>
-                                      </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        
-                                            <?php foreach($noticias as $n) {?>
-                                                <?php foreach($files as $file){
-                                                    
-                                                        if ($n['ruta']==$file) {?>
-                                                            <tr>
-                                                              <td><div class="grid_3"><?php echo $n['fecha'] ?></div></td>
-                                                                <td><div class="grid_1"><?php echo $n['titulo']; 
-                                                                $a=$n['titulo'];
-                                                                $b=$n['autor']; 
-                                                                $c=$n['fecha']; 
-                                                                $d=$n['descripcion']; 
-                                                                $e=$n['resumen']; 
-                                                                $f=$n['ruta'];
-                                                                $g=$n['carrera'];
-                                                                ?>
-                                                                    <form action="http://localhost/roles_usuarios/listado/detalles" method="post">
-                                                                        <input type="hidden" name="variable1" value="<?php echo $a ?>" />
-                                                                        <input type="hidden" name="variable2" value="<?php echo $b ?>" />
-                                                                        <input type="hidden" name="variable3" value="<?php echo $c ?>" />
-                                                                        <input type="hidden" name="variable4" value="<?php echo $d ?>" />
-                                                                        <input type="hidden" name="variable5" value="<?php echo $e ?>" />
-                                                                        <input type="hidden" name="variable6" value="<?php echo $f ?>" />
-                                                                        <input type="hidden" name="variable7" value="<?php echo $g ?>" />
-                                                                       
-                                                                </div></td>
-                                                                <td><div class="grid_2"><?php echo $n['autor'] ?></div></td>
-                                                                <td><div class="grid_2"><?php echo $n['descripcion'] ?></div></td>
-                                                                 <td>
-                                                                 <input type="submit" value="Ver Detalles" />
-                                                                    </form>
-                                                                    </td>
-                                                                <!--
-                                                                <td><div class="grid_4"><?php echo $fila->descripcion ?></div></td>
-                                                                <td><div class="grid_5"><?php echo $fila->resumen ?></div></td>
-                                                                <td><div class="grid_6"><?php echo anchor('admin/downloads/'.$file, $file).br(1); ?></div></td>
-                                                                -->
-                                                            </tr>
-
-                                                        <?php }//(if )?>
-                                                    
-                                                <?php }//foreach($files as $file) ?>
-                                            <?php } //foreach($noticias as $n)?>
-                                        </div>
-                                    </div>
-                                </table>
-                        
-                    <?php } //if($files)
-                    else{?>
+                        <?php } //if($files)
+                        else{?>
                         <?php echo heading('No hay archivos para descargar ', 3).anchor('admin', 'Subir un Archivo');?>
-                    <?php } ?>
-                                                                              </tbody>
-                                  </table>
-                    </div>
-                </div>
-                
-            </p> 
-        </ul>                     
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+    <div style="float:right;"><img alt="logo" src="<?php echo base_url()?>public/img/azulcopia.jpg"></div>
+</div>
+
     <!----------------------------------------------------> 
 
-
-
-<code>
-#carousel ul {<br />
-&nbsp;&nbsp;&nbsp; list-style: none;<br />
-&nbsp;&nbsp;&nbsp; width: 1500px;<br />
-&nbsp;&nbsp;&nbsp; margin: 0;<br />
-&nbsp;&nbsp;&nbsp; padding: 0;<br />
-&nbsp;&nbsp;&nbsp; position: relative;<br />
-}<br />
-#carousel li {<br />
-&nbsp;&nbsp;&nbsp; display: inline;<br />
-&nbsp;&nbsp;&nbsp; float: left;<br />
-} 
-</code>
-
-           
-         
-          
-
-            
-            
-  
-
-  <!----------------------------------------------------> 
-
-    <footer class="ui-layout-south"></footer>
-    </body>
+<footer class="ui-layout-south"></footer>
+</body>
 
 </html>
+
+
