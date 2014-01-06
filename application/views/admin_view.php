@@ -1501,7 +1501,7 @@ select
         <div id="top-menu">
             
                         
-            <?=br(1).anchor('admin/info', 'Proyectos de Titulo'); ?>
+            <?=anchor('listado/', 'Proyectos de Titulo'); ?>
             
             
             <?=anchor(base_url().'login/logout_ci', 'Cerrar sesión')?>
@@ -1625,7 +1625,7 @@ select
                 </div>
             </div>
             <div>
-                <h3><a href="#" rel="4" >Buscar Descripcion</a></h3>
+                <h3><a href="#" rel="4" >Buscar Por Palabras Clave</a></h3>
                 <div class="submenu">
                     <ul>
                         <?=form_open(base_url().'resultados/validar_descripcion')?>
@@ -1816,7 +1816,7 @@ echo form_fieldset('Ingreso Proyecto de Titulo');
         <table>
                         <tr>
                     <td>
-                        <?php echo form_label('Descripcion: '); ?>
+                        <?php echo form_label('Palabras Clave: '); ?>
                     </td>
                     <td>
                         <?php echo form_input($descripcion); ?>

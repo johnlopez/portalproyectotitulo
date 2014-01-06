@@ -1592,7 +1592,7 @@ select
                 </div>
             </div>
             <div>
-                <h3><a href="#" rel="4" >Buscar Descripcion</a></h3>
+                <h3><a href="#" rel="4" >Buscar Por Palabras Clave</a></h3>
                 <div class="submenu">
                     <ul>
                         <?=form_open(base_url().'resultados/validar_descripcion')?>

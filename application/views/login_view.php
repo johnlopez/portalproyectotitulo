@@ -1748,6 +1748,7 @@ form:after {
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
+                        <a>(aaaa-mm-dd)</a>
                         <?=form_open(base_url().'resultados/validar_fecha')?>
                         <input type="text" name="buscar_fecha" id="buscar_fecha" />
                         <input type="submit" value="Buscar" />
@@ -1756,7 +1757,7 @@ form:after {
                 </div>
             </div>
             <div>
-                <h3><a href="#" rel="4" >Buscar Descripcion</a></h3>
+                <h3><a href="#" rel="4" >Buscar Por Palabras Clave</a></h3>
                 <div class="submenu">
                     <ul>
                         <?=form_open(base_url().'resultados/validar_descripcion')?>

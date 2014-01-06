@@ -1508,16 +1508,7 @@ select
     <div id="left-menu" class="ui-layout-west">
         <div id="accordion">
             <!--Seccion control de bienes-->
-            <div>
-                <h3><a href="#" rel="3" >Acerca de la UTEM</a></h3>
-                <div class="submenu">
-                    <ul>
-                      <li>hola</li>
-                      <li>hola</li>
-                      <li>hola</li>
-                    </ul>
-                </div>
-            </div>
+
             <div>
                 <h3><a href="#" rel="4" >Buscar Titulo</a></h3>
                 <div class="submenu">

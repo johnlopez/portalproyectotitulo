@@ -1501,7 +1501,7 @@ select
         <div id="top-menu">
             
                         
-            <?=br(1).anchor('admin/info', 'Proyectos de Titulo'); ?>
+            <?=anchor('listado/', 'Proyectos de Titulo'); ?>
             
             
             <?=anchor(base_url().'login/logout_ci', 'Cerrar sesión')?>
@@ -1513,20 +1513,12 @@ select
         <div id="accordion">
             <!--Seccion control de bienes-->
             <div>
-                <h3><a href="#" rel="3" >Acerca de la UTEM</a></h3>
-                <div class="submenu">
-                    <ul>
-                      <li>hola</li>
-                      <li>hola</li>
-                      <li>hola</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
                 <h3><a href="#" rel="4" >Gestionar Proyectos de Titulo</a></h3>
                 <div class="submenu">
                     <ul>
+                      <li>
                         <?=br(1).anchor('admin/', 'Agregar Proyectos de Titulo'); ?>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -1534,7 +1526,9 @@ select
                 <h3><a href="#" rel="4" >Gestionar Usuarios</a></h3>
                 <div class="submenu">
                     <ul>
-                        <?=br(1).anchor('admin/agregar', 'Usuarios'); ?>
+                      <li>
+                        <?=br(1).anchor('admin/agregar', 'Agregar/Editar/Eliminar'); ?>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -1611,6 +1605,7 @@ select
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
+                      (aaaa/mm/dd)
                         <?=form_open(base_url().'resultados/validar_fecha')?>
                         <input type="text" name="buscar_fecha" id="buscar_fecha" />
                         <input type="submit" value="Buscar" />
@@ -1619,7 +1614,7 @@ select
                 </div>
             </div>
             <div>
-                <h3><a href="#" rel="4" >Buscar Descripcion</a></h3>
+                <h3><a href="#" rel="4" >Buscar Por Palabras Clave</a></h3>
                 <div class="submenu">
                     <ul>
                         <?=form_open(base_url().'resultados/validar_descripcion')?>
