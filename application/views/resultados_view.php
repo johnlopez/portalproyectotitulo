@@ -1499,7 +1499,7 @@ select
             <img alt="logo" src="<?php echo base_url()?>public/img/utem_estado_de_chile.png">
         </h1>
         <div id="top-menu">
-            <?=anchor('vista/', 'Inicio'); ?>
+            
             <?=anchor('listado/', 'Proyectos de Titulo'); ?>
             <?=anchor('login/', 'Registrarse'); ?>
         </div>
@@ -1508,16 +1508,7 @@ select
     <div id="left-menu" class="ui-layout-west">
         <div id="accordion">
             <!--Seccion control de bienes-->
-            <div>
-                <h3><a href="#" rel="3" >Acerca de la UTEM</a></h3>
-                <div class="submenu">
-                    <ul>
-                      <li>hola</li>
-                      <li>hola</li>
-                      <li>hola</li>
-                    </ul>
-                </div>
-            </div>
+
             <div>
                 <h3><a href="#" rel="4" >Buscar Titulo</a></h3>
                 <div class="submenu">
@@ -1589,6 +1580,7 @@ select
                 <h3><a href="#" rel="4" >Buscar Fecha</a></h3>
                 <div class="submenu">
                     <ul>
+                      (aaaa/mm/dd)
                         <?=form_open(base_url().'resultados/validar_fecha')?>
                         <input type="text" name="buscar_fecha" id="buscar_fecha" />
                         <input type="submit" value="Buscar" />
@@ -1597,7 +1589,7 @@ select
                 </div>
             </div>
             <div>
-                <h3><a href="#" rel="4" >Buscar Descripcion</a></h3>
+                <h3><a href="#" rel="4" >Buscar Por Palabras Clave</a></h3>
                 <div class="submenu">
                     <ul>
                         <?=form_open(base_url().'resultados/validar_descripcion')?>
@@ -1628,11 +1620,17 @@ select
 
 
 <div id="carousel" class="ui-layout-center" >
-    <div style="float:left; width: 1200px;" >
+    <div style="float:left;">
             <div class="container_12">
                 <?php if(!$peliculas){?>
+                <h3>
                     No se encontraron Resultados
+                    </h3>
+                    <font color="red" style="font-weight: bold; font-size: 14px;">
+                    <h4>
                     <span><?php echo validation_errors(); ?></span>
+                    </h4>
+                    </font>
                 <?php
                 }else{?>
                
@@ -1717,6 +1715,10 @@ select
             </div>
                     
 </div>
+
+</div>
+
+<div style="float:right;"><img alt="logo" src="<?php echo base_url()?>public/img/azulcopia1.jpg"></div>
 
 
 
